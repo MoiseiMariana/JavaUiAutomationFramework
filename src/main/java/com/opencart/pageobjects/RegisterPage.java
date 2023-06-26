@@ -1,6 +1,7 @@
 package com.opencart.pageobjects;
 
 import com.opencart.managers.DataFakerManager;
+import com.opencart.managers.DriverManager;
 import com.opencart.managers.ScrollManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +42,8 @@ public class RegisterPage extends Page {
         privacyToggle.click();
     }
 
-    public void switchOnTheContinueBtn() {
+    public void switchOnTheContinueBtn() throws InterruptedException {
+        ScrollManager.scrollToElement(DriverManager.getInstance().getDriver(), continueBtn);
         continueBtn.click();
     }
 }
