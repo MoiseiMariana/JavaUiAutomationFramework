@@ -24,7 +24,7 @@ public class TestRunner {
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.fillInTheRegisterForm(firstName, lastName, email, password);
         registerPage.switchOnThePrivacyToggle(driver);
-        registerPage.switchOnTheContinueBtn();
+        registerPage.clickOnTheContinueBtn();
         Thread.sleep(2000);
 
         System.out.println(driver.getCurrentUrl());

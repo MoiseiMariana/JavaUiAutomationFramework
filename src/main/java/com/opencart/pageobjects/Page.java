@@ -17,6 +17,7 @@ public abstract class Page {
     public void navigateToRegisterPageFromHeaderMenu() {
         accountIcon.click();
         System.out.println("The Account Icon was clicked");
+
         registerBtn.click();
         System.out.println("The Register Button was clicked");
 
