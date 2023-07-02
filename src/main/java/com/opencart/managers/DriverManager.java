@@ -3,6 +3,7 @@ package com.opencart.managers;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -14,6 +15,9 @@ public class DriverManager {
     private DriverManager() {
         switch (webDriverType.toUpperCase()) {
             case "CHROME":
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--incognito");
+                driver = new ChromeDriver(options);
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 System.out.println("The Chrome Driver was initiated");
