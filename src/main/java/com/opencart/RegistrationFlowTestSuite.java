@@ -17,8 +17,8 @@ public class RegistrationFlowTestSuite {
     public void executeTheCodeBeforeEachTestFromThisClass() {
         driver = DriverManager.getInstance().getDriver();
         driver.get("https://andreisecuqa.host/");
-        homePage = new HomePage(driver);
         registerPage = new RegisterPage(driver);
+        homePage = new HomePage(driver);
         counter++;
         System.out.println("The test number " + counter + "started");
     }
@@ -33,7 +33,7 @@ public class RegistrationFlowTestSuite {
 
         registerPage.fillInTheRegisterForm(firstName, lastName, email, password);
         registerPage.switchOnThePrivacyToggle(driver);
-        registerPage.switchOnTheContinueBtn();
+        registerPage.clickOnTheContinueBtn();
         Thread.sleep(2000);
 
         System.out.println(driver.getCurrentUrl());
@@ -60,7 +60,7 @@ public class RegistrationFlowTestSuite {
         registerPage.fillInTheRegisterForm(firstName, lastName, email, password);
         // Don't enable the Privacy Toggle
         // registerPage.switchOnThePrivacyToggle(driver);
-        registerPage.switchOnTheContinueBtn();
+        registerPage.clickOnTheContinueBtn();
         Thread.sleep(2000);
 
         System.out.println(driver.getCurrentUrl());

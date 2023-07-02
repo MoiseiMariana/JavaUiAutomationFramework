@@ -42,7 +42,7 @@ public class RegisterPage extends Page {
         privacyToggle.click();
     }
 
-    public void switchOnTheContinueBtn() throws InterruptedException {
+    public void clickOnTheContinueBtn() throws InterruptedException {
         ScrollManager.scrollToElement(DriverManager.getInstance().getDriver(), continueBtn);
         continueBtn.click();
     }
